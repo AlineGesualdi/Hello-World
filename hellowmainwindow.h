@@ -24,12 +24,14 @@ public:
 
 public slots:
     void showLabel();
+    void showBlank();
 
 private:
     Ui::HelloWMainWindow *ui;
-    QTimer *mytimer;
+    QTimer *mytimer, *mytimerBlank;
     QStringList myList;
     QString listItem;
+    int counter;
 };
 
 #endif // HELLOWMAINWINDOW_H
