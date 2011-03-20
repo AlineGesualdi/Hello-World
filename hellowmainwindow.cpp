@@ -7,6 +7,9 @@ HelloWMainWindow::HelloWMainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setStyleSheet("background-color: white;");
+    mytimer = new QTimer(this);
+    connect(mytimer, SIGNAL(timeout()), this, SLOT(showLabel()));
+    myList << "aline" << "alex" << "maria fernanda";
 }
 
 HelloWMainWindow::~HelloWMainWindow()
@@ -17,11 +20,14 @@ HelloWMainWindow::~HelloWMainWindow()
 void HelloWMainWindow::buttonClickHandler()
 {
     ui->label->setText(ui->lineEdit->text());
+    //ui->label->setText(myList[2]);
+    mytimer->start(1000);
+    ui->label->hide();
 }
 
-void HelloWMainWindow::buttonClicked()
+void HelloWMainWindow::showLabel()
 {
-
+    ui->label->show();
 }
 
 void HelloWMainWindow::keyPressEvent(QKeyEvent *event)
@@ -31,7 +37,7 @@ void HelloWMainWindow::keyPressEvent(QKeyEvent *event)
                     QApplication::exit();
                     break;
             case Qt::Key_Enter:
-                    buttonClicked();
+
                     break;
             default:
                     QWidget::keyPressEvent(event);

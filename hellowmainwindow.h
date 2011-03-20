@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QKeyEvent>
+#include <QTimer>
+#include <QStringList>
+#include <QString>
 #include <ctype.h>
 
 namespace Ui {
@@ -20,10 +23,13 @@ public:
 
 public slots:
     void buttonClickHandler();
-    void buttonClicked();
+    void showLabel();
 
 private:
     Ui::HelloWMainWindow *ui;
+    QTimer *mytimer;
+    QStringList myList;
+    QString listItem;
 };
 
 #endif // HELLOWMAINWINDOW_H

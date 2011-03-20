@@ -98,34 +98,17 @@
    <slot>buttonClickHandler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>305</x>
-     <y>239</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>233</x>
-     <y>243</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>HelloWMainWindow</receiver>
-   <slot>buttonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>283</x>
+     <x>288</x>
      <y>133</y>
     </hint>
     <hint type="destinationlabel">
-     <x>237</x>
-     <y>139</y>
+     <x>245</x>
+     <y>134</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>buttonClickHandler()</slot>
-  <slot>buttonClicked()</slot>
  </slots>
 </ui>
