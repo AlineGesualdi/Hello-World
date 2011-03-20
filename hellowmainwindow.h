@@ -19,10 +19,10 @@ class HelloWMainWindow : public QMainWindow
 public:
     explicit HelloWMainWindow(QWidget *parent = 0);
     void keyPressEvent(QKeyEvent *k);
+    void calcScreenCenter(int widthDesktop, int heightDesktop);
     ~HelloWMainWindow();
 
 public slots:
-    void buttonClickHandler();
     void showLabel();
 
 private:
