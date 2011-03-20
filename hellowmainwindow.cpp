@@ -10,7 +10,8 @@ HelloWMainWindow::HelloWMainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setStyleSheet("background-color: white;");
 
-    myList << "Hello 1" << "Hello 2" << "Hello 3";
+    primeList << "Prime 1" << "Prime 2" << "Prime 3";
+    targetList << "Target 1" << "Target 2" << "Target 3";
 
     ui->label->hide();
 
@@ -21,6 +22,7 @@ HelloWMainWindow::HelloWMainWindow(QWidget *parent) :
     mytimer->start(1000);
 
     counter = 0;
+    flagPrime = false;
 }
 
 HelloWMainWindow::~HelloWMainWindow()
@@ -40,16 +42,31 @@ void HelloWMainWindow::calcScreenCenter(int widthDesktop, int heightDesktop)
 void HelloWMainWindow::showLabel()
 {
     mytimer->stop();
-    //std::cout << "myList.size = " << myList.size() <<  "  counter = " << counter << std::endl;
-    if(counter < myList.size()-1) counter++;
-    else counter = myList.size();
+    if(counter < primeList.size()-1) counter++;
+    else counter = primeList.size();
+
+    if(flagPrime == false) { ui->label->setText(primeList[counter-1]); counter--; }
+    if(flagPrime == true) ui->label->setText(targetList[counter-1]);
+
+
     ui->label->show();
-    ui->label->setText(myList[counter-1]);
     mytimerBlank->start(300);
+}
+
+void HelloWMainWindow::showPrime(int count)
+{
+
+}
+
+void HelloWMainWindow::showTarget(int count)
+{
+
 }
 
 void HelloWMainWindow::showBlank()
 {
+    if(flagPrime == false) flagPrime = true;
+    else flagPrime = false;
     mytimerBlank->stop();
     ui->label->hide();
     mytimer->start(1000);

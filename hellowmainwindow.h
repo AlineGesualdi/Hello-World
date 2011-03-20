@@ -27,9 +27,10 @@ public slots:
     void showBlank();
 
 private:
+    bool flagPrime;
     Ui::HelloWMainWindow *ui;
     QTimer *mytimer, *mytimerBlank;
-    QStringList myList;
+    QStringList primeList, targetList;
     QString listItem;
     int counter;
 };
